@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorization | The Power Paradox</title><link rel="icon" href="favicon.png"><link rel="stylesheet" href="style.css"></head>
+<body><main><header><img src="logo.png" alt="The Power Paradox logo"><a href="./">THE POWER PARADOX</a></header><h1>Authorization received</h1>
+<p id="msg">Forwarding the authorization to the publishing tool on this computer…</p>
+<script>
+// Facebook redirects here after the owner approves the app. The code is handed to the local tool listening on 127.0.0.1:8769
+// (only reachable from the owner's own computer). Nothing is sent anywhere else and nothing is stored on this site.
+(function () {
+  var q = window.location.search;
+  if (!q || q.indexOf('state=') < 0) { document.getElementById('msg').textContent = 'No authorization data in this address.'; return; }
+  window.location.replace('http://127.0.0.1:8769/' + q);
+})();
+</script><nav><a href="./">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a>
+<a href="data-deletion.html">Data deletion</a><a href="https://www.youtube.com/@ThePowerParadox-f9f">YouTube</a><a href="https://www.facebook.com/profile.php?id=61596781859469">Facebook</a></nav></main></body></html>
